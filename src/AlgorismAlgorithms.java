@@ -1,30 +1,30 @@
-package com.shpp.p2p.cs.okruglenya.assignment5;
-
-import com.shpp.cs.a.console.TextProgram;
+import java.util.Scanner;
 
 /**
  * File: AlgorismAlgorithms.java
  * <p>
- * Adds 2 numbers that represented by 2 strings.
+ * Adds 2 integer numbers that represented by 2 strings.
  * <p>
- * More details in Task #5 - Assembly algorithm
  */
-public class AlgorismAlgorithms extends TextProgram {
+public class AlgorismAlgorithms {
 
-    /* The number that represents the next rank */
+    /** The number that represents the next rank */
     private static final int NEXT_RANK_NUMBER = 10;
 
     private static final int INCREASE_RANK_NUMBER = 1;
 
-    public void run() {
-        /* Sit in a loop, reading numbers and adding them. */
-        while (true) {
-            String n1 = readLine("Enter first number:  ");
-            String n2 = readLine("Enter second number: ");
-            println(n1 + " + " + n2 + " = " + addNumericStrings(n1, n2));
+    public static void main(String[] args) {
 
-            println();
-        }
+        /* Sit in a loop, reading numbers and adding them. */
+        Scanner in  = new Scanner(System.in);
+
+                System.out.println("Enter first integer number: ");
+                String n1 = in.nextLine();
+                System.out.println("Enter second integer number: ");
+                String n2 = in.nextLine();
+                System.out.println(n1 + " + " + n2 + " = " + addNumericStrings(n1, n2));
+
+                System.out.println();
     }
 
     /**
@@ -35,7 +35,7 @@ public class AlgorismAlgorithms extends TextProgram {
      * @param n2 The second number.
      * @return A String representation of n1 + n2
      */
-    private String addNumericStrings(String n1, String n2) {
+    private static String addNumericStrings(String n1, String n2) {
 
 
         /* This number represents the rest  when we need to add 1 to the next rank of the number
@@ -84,7 +84,7 @@ public class AlgorismAlgorithms extends TextProgram {
      * @param rest indicates whether 1 needs to be added to the next rank.
      * @return String which consist the number to which the remaining elements of the larger number have been added
      */
-    private String addRemainingDigitsOfNumber(String n1, String n2, int rest) {
+    private static String addRemainingDigitsOfNumber(String n1, String n2, int rest) {
         StringBuilder result = new StringBuilder();
 
         /* length of the remaining digits of the larger number */
